@@ -262,7 +262,7 @@ public class IntraBrokerDiskCapacityGoal extends AbstractGoal {
 
   /**
    * Check whether the combined replica utilization is above the given disk capacity limits.
-   * If _shouldEmptyZeroCapacityDisks is true, the disk utilization is over limit only if it greater than 0.
+   * If _shouldEmptyZeroCapacityDisks is true, the disk utilization is over limit only if it is greater than 0.
    *
    * @param disk Disk to be checked for capacity limit violation.
    * @return {@code true} if utilization is over the limit, {@code false} otherwise.
