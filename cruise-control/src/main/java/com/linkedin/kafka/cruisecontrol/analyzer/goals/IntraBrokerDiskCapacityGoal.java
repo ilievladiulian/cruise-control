@@ -43,13 +43,13 @@ public class IntraBrokerDiskCapacityGoal extends AbstractGoal {
   private static final Logger LOG = LoggerFactory.getLogger(IntraBrokerDiskCapacityGoal.class);
   private static final int MIN_NUM_VALID_WINDOWS = 1;
   private static final Resource RESOURCE = Resource.DISK;
-  private boolean _shouldEmptyZeroCapacityDisks = false;
+  private final boolean _shouldEmptyZeroCapacityDisks;
 
   /**
    * Constructor for Capacity Goal.
    */
   public IntraBrokerDiskCapacityGoal() {
-
+    _shouldEmptyZeroCapacityDisks = false;
   }
 
   /**
@@ -66,6 +66,7 @@ public class IntraBrokerDiskCapacityGoal extends AbstractGoal {
    */
   IntraBrokerDiskCapacityGoal(BalancingConstraint constraint) {
     _balancingConstraint = constraint;
+    _shouldEmptyZeroCapacityDisks = false;
   }
 
   @Override
